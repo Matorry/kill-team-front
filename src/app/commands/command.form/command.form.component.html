@@ -1,0 +1,22 @@
+<form [formGroup]="registerForm" aria-label="userRegister" (submit)="handleCreateCommand()">
+  <span *ngIf="!id" for="userRegister">New Command</span>
+  <span *ngIf="id" for="userRegister">Update Command</span>
+  <div class="columnContainer">
+    <div class="column">
+      <input type="text" name="name" formControlName="name" placeholder="Command name">
+      <input type="text" name="faction" formControlName="faction" placeholder="Faction">
+
+
+    </div>
+    <div class="column">
+      <input type="number" name="size" formControlName="size" placeholder="Command size">
+      <input type="file" name="imageData" formControlName="imageData" placeholder="Command shield"
+        (change)="uploadFile($event)">
+
+
+    </div>
+  </div>
+  <span *ngIf="errorMessage">{{ errorMessage }}</span>
+  <button *ngIf="!id" type="submit">Create</button>
+  <button *ngIf="id" type="submit">Update</button>
+</form>

@@ -1,0 +1,22 @@
+header {
+  display: flex;
+  flex-direction: row;
+  padding: 12px;
+  background-color: black;
+  height: 12vh;
+  align-items: center;
+  justify-content: space-between;
+
+  img {
+    height: 30px;
+  }
+}
+@media (min-width: 1200px) {
+  header {
+    padding: 12px;
+    img {
+      height: 60px;
+      padding-inline-start: 2.5rem;
+    }
+  }
+}

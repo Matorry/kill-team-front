@@ -1,0 +1,10 @@
+<!-- eslint-disable @angular-eslint/template/interactive-supports-focus -->
+<!-- eslint-disable @angular-eslint/template/click-events-have-key-events -->
+<nav>
+  <ul>
+    <li *ngFor="let item of menuOptions">
+      <a [routerLink]="item.path">{{item.label}}</a>
+    </li>
+    <li *ngIf="this.token" role="button" (click)="logout()"><a [routerLink]="'/home'">Logout</a></li>
+  </ul>
+</nav>

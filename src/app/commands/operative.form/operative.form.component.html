@@ -1,0 +1,28 @@
+<div>
+  <form [formGroup]="registerForm" aria-label="userRegister" (submit)="handleCreateOperative()">
+    <span *ngIf="id" for="userRegister">New Operative</span>
+    <span *ngIf="operativeId" for="userRegister">Update Operative</span>
+    <div class="columnContainer">
+      <div class="column">
+        <input type="text" name="name" formControlName="name" placeholder="Name">
+        <input type="text" name="faction" formControlName="faction" placeholder="Faction">
+        <input type="text" name="operativeType" formControlName="operativeType" placeholder="operativeType">
+        <input type="text" name="groupActivation" formControlName="groupActivation" placeholder="groupActivation">
+        <input type="text" name="defence" formControlName="defence" placeholder="defence">
+      </div>
+      <div class="column">
+        <input type="text" name="save" formControlName="save" placeholder="save">
+        <input type="text" name="wounds" formControlName="wounds" placeholder="wounds">
+        <input type="text" name="moviment" formControlName="moviment" placeholder="moviment">
+        <input type="text" name="actionPointLimit" formControlName="actionPointLimit" placeholder="actionPointLimit">
+        <input type="file" name="imageData" formControlName="imageData" placeholder="Command shield"
+          (change)="uploadFile($event)">
+
+
+      </div>
+    </div>
+    <span *ngIf="errorMessage">{{ errorMessage }}</span>
+    <button *ngIf="id" type="submit">Create</button>
+    <button *ngIf="operativeId" type="submit">Update</button>
+  </form>
+</div>

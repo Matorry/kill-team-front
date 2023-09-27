@@ -1,0 +1,21 @@
+<div>
+  <div>
+    <h2>{{operative?.name}}</h2>
+    <span role="button" class="button" [routerLink]="['/commands/update-operative/', operative?.id]">
+      ✏️
+    </span>
+  </div>
+  <div>
+    <img src={{operative?.imageData?.url}} alt="{{operative?.name}}">
+    <ul>
+      <li>Operative type: {{operative?.operativeType}}</li>
+      <li>Faction: {{operative?.faction}}</li>
+      <li>Moviment: {{operative?.moviment}}</li>
+      <li>Action points: {{operative?.actionPointLimit}}</li>
+      <li>Group activation{{operative?.groupActivation}}</li>
+      <li>Defence: {{operative?.defence}}</li>
+      <li>Save: {{operative?.defence}}</li>
+      <li>Wounds: {{operative?.wounds}}</li>
+    </ul>
+  </div>
+</div>

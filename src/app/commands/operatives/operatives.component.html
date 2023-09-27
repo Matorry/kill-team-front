@@ -1,0 +1,24 @@
+<div>
+  <div>
+    <h2>{{command.name}}</h2>
+    <a [routerLink]="['/commands/new-operative/', id]">Build your operative</a>
+  </div>
+  <div>
+    <select name="commandFilter" id="" #yourOperatives (change)="getOperative(yourOperatives.value)">
+      <option value="default" default>Select your Operative</option>
+      <option value="" default>All operatives</option>
+      <option value="{{operative.id}}" *ngFor="let operative of userOperatives" option>
+        {{operative.name}}</option>
+    </select>
+    <h3>Your operatives list</h3>
+    <killteam-operative [operatives]="operatives"></killteam-operative>
+  </div>
+  <div>
+    <span *ngIf="pageCount > 1">Page</span>
+    <span *ngIf="pageCount > 1">{{currentPage}} / {{pageCount}}</span>
+  </div>
+  <div class="buttonContainer" *ngIf="!isFilter">
+    <button *ngIf="currentPage !== 1" (click)="handlePreviousPage()">Previus page</button>
+    <button *ngIf="currentPage !== pageCount" (click)="handleNextPage()">Next page</button>
+  </div>
+</div>

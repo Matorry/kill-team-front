@@ -1,0 +1,7 @@
+<!-- eslint-disable @angular-eslint/template/interactive-supports-focus -->
+<!-- eslint-disable @angular-eslint/template/click-events-have-key-events -->
+<header>
+  <img src="../../assets/killteam-logo.png" alt="">
+  <killteam-menu *ngIf="this.token" [menuOptions]="menuLogedOptions"></killteam-menu>
+  <killteam-menu *ngIf="!this.token" [menuOptions]="menuOptions"></killteam-menu>
+</header>

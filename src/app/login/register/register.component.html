@@ -1,0 +1,19 @@
+<form [formGroup]="registerForm" aria-label="userRegister" (submit)="handleRegister()">
+  <span for="userRegister">Register</span>
+  <div class="columnContainer">
+    <div class="column">
+      <input type="text" name="firstName" formControlName="firstName" placeholder="First name">
+      <input type="text" name="lastName" formControlName="lastName" placeholder="Last name">
+      <input type="text" name="userName" formControlName="userName" placeholder="User name">
+
+    </div>
+    <div class="column">
+      <input type="number" name="age" formControlName="age" placeholder="Age">
+      <input type="email" name="email" formControlName="email" placeholder="Email">
+      <input type="password" name="password" formControlName="password" placeholder="Password">
+
+    </div>
+  </div>
+  <span *ngIf="errorMessage">{{ errorMessage }}</span>
+  <button type="submit">Submit</button>
+</form>

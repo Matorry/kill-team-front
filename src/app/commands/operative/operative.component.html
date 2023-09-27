@@ -1,0 +1,13 @@
+<!-- eslint-disable @angular-eslint/template/interactive-supports-focus -->
+<!-- eslint-disable @angular-eslint/template/click-events-have-key-events -->
+<ul>
+  <li *ngFor="let item of operatives">
+    <img src={{item.imageData.url}} alt="Team image">
+    <a [routerLink]="['/commands/operative-details/', item.id]">{{item.name}}</a>
+    <span>Faction : {{item.faction}}</span>
+    <span>Type : {{item.operativeType}}</span>
+    <span role="button" class="button" (click)="handleDelete(item.id)">
+      ✖️
+    </span>
+  </li>
+</ul>

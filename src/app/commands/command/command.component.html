@@ -1,0 +1,18 @@
+<!-- eslint-disable @angular-eslint/template/interactive-supports-focus -->
+<!-- eslint-disable @angular-eslint/template/click-events-have-key-events -->
+<ul>
+  <li *ngFor="let item of commands">
+    <img src={{item.imageData.url}} alt="Team image">
+    <a [routerLink]="['details/', item.id]">{{item.name}}</a>
+    <span>Faction : {{item.faction}}</span>
+    <span>Size : {{item.size}}</span>
+    <div class="controls">
+      <span role="button" class="button" (click)="handleDelete(item.id)">
+        ✖️
+      </span>
+      <span role="button" class="button" [routerLink]="['update-command', item.id]">
+        ✏️
+      </span>
+    </div>
+  </li>
+</ul>

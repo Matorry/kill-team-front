@@ -1,0 +1,24 @@
+<div>
+  <div>
+    <h2>Build your commands and play with them</h2>
+    <a [routerLink]="'new-command'">Build your command</a>
+  </div>
+  <div>
+    <select name="commandFilter" id="" #yourCommands (change)="getCommand(yourCommands.value)">
+      <option disabled="disabled" selected="true">Select your Command</option>
+      <option value="" default>All commands</option>
+      <option value="{{command.id}}" *ngFor="let command of userCommands" option>
+        {{command.name}}</option>
+    </select>
+    <h3>Your commands list</h3>
+    <killteam-command [commands]="commands"></killteam-command>
+  </div>
+  <div>
+    <span *ngIf="pageCount > 1">Page</span>
+    <span *ngIf="pageCount > 1">{{currentPage}} / {{pageCount}}</span>
+  </div>
+  <div class="buttonContainer" *ngIf="!isFilter">
+    <button *ngIf="currentPage !== 1" (click)="handlePreviousPage()">Previus page</button>
+    <button *ngIf="currentPage !== pageCount" (click)="handleNextPage()">Next page</button>
+  </div>
+</div>
